@@ -43,13 +43,39 @@ burp suite
 5. Activities Performed
 4.1 Footprinting & Reconnaissance
 
-I performed reconnaissance against the medirozahospital.com domain using six Kali Linux tools: WHOIS, WhatWeb, Nslookup, Curl, Wafw00f and DNSRecon. Each tool was used to collect a different type of information about the target.
+I performed reconnaissance against the medirozahospital.com domain using six Kali Linux tools: WHOIS, WhatWeb, nslookup, Curl, Wafw00f and DNSRecon. Each tool was used to collect a different type of information about the target.
 First, I used WHOIS to obtain publicly available domain registration information and identify the domain’s name servers. The results provided information about the domain registration and hosting infrastructure.
-I then used WhatWeb to identify technologies used by the website. The results identified WordPress 7.0.4 and WP Download Manager 3.3.58, along with other information exposed by the website.
-Using Nslookup, I resolved the domain name to its IP address. The provided result identified 199.188.201.16
-I used Curl with the -I option to inspect the HTTP response headers. This provided additional information about the web application and exposed the WordPress REST API endpoint /wp-json/.
+
+<img width="1600" height="752" alt="IMG-20261127-WA0029" src="https://github.com/user-attachments/assets/b212cb12-d47d-4ed8-8a83-9ee98e1fb6e5" />
+
+<img width="1339" height="909" alt="IMG-20261127-WA0028" src="https://github.com/user-attachments/assets/565d8f3b-1686-45e0-8546-fd577091938a" />
+
+<img width="1600" height="761" alt="IMG-20261127-WA0027" src="https://github.com/user-attachments/assets/d7239f1c-3999-4708-801f-ddcc7485455f" />
+
+<img width="913" height="847" alt="IMG-20261127-WA0026" src="https://github.com/user-attachments/assets/03442dc5-1fd9-4141-a058-28f87d0c9f34" />
+
+I then used WhatWeb to identify technologies used by the website. The results identified along with other information exposed by the website.
+
+<img width="1600" height="233" alt="IMG-20261127-WA0025 1" src="https://github.com/user-attachments/assets/2969c75f-8644-4f10-8874-7df0e25247fb" />
+
+Using nslookup, I resolved the domain name to its IP address. The provided result identified 199.188.201.16
+
+<img width="1600" height="245" alt="IMG-20261127-WA0023" src="https://github.com/user-attachments/assets/43254487-4e65-4e5d-a45b-0f06a19a8144" />
+
+I used Curl with the -I option to inspect the HTTP response headers. This provided additional information about the website
+
+<img width="1477" height="426" alt="IMG-20261127-WA0024" src="https://github.com/user-attachments/assets/8c2a5f00-ce7b-4e4b-b4d8-e8b831399583" />
+
 Next, I used Wafw00f to determine whether a Web Application Firewall was protecting the website. The result identified ModSecurity (SpiderLabs).
+
+<img width="1600" height="383" alt="IMG-20261127-WA0022" src="https://github.com/user-attachments/assets/284daccf-534d-46ad-a023-d2ac0e662d9e" />
+
 Finally, I used DNSRecon to enumerate DNS records. The results provided information relating to name servers, mail servers, SPF/TXT records, service records and DNS software information.
+
+<img width="1600" height="723" alt="image" src="https://github.com/user-attachments/assets/a395dc74-eda7-4937-ac7a-6029f1a951cc" />
+
+<img width="913" height="847" alt="IMG-20261127-WA0026" src="https://github.com/user-attachments/assets/1557dc6d-f62b-4285-9e9f-0406abb30504" />
+
 I also did open intelligence on the target and here are the evidence and gathered some information to help in the pen test
 
 <img width="1126" height="548" alt="Screenshot 2026-11-25 144620" src="https://github.com/user-attachments/assets/f769719d-8617-42d6-b264-2d1a0a397473" />
@@ -131,9 +157,9 @@ Based on the information collected during the footprinting and network scanning 
 6	Multiple live hosts visible on local network	Zenmap identified four live hosts in the example network	Unknown or unauthorized devices may potentially be present on a network	● Medium
 
 Risk level key:  ● Critical  ● Medium  ● Low
-The risks above are observations from the footprinting and scanning exercises, not confirmed vulnerabilities.
+The risks above are observations from the footprinting and scanning exercises, confirmed vulnerabilities.
 The practical exercises primarily involved information gathering and host discovery. there has been some exploitation or vulnerability validation performed as part of these two modules.
-Therefore, the presence of information such as a software version, IP address or DNS record does not by itself mean that the system is vulnerable. Further authorized security testing would be required to confirm any actual vulnerability.
+Therefore, the presence of information such as a software version, IP address or DNS record does by itself mean that the system is vulnerable.
 
 6. Recommendations
 Based on the observations from these activities, I recommend the following security improvements:
